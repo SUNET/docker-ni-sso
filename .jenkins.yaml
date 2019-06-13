@@ -1,0 +1,5 @@
+builders:
+  - docker
+upstream:
+  - python-norduniclient
+clean_workspace: true

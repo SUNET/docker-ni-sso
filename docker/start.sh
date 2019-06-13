@@ -15,11 +15,11 @@ log_dir=${log_dir-'/var/log/ni'}
 state_dir=${state_dir-"${base_dir}/run"}
 media_dir=${media_dir-"${base_dir}/media"}
 cache_dir="/tmp/django_cache/"
-workers=${workers-1}
+workers=${workers-2}
 worker_class=${worker_class-sync}
-worker_threads=${worker_threads-1}
+worker_threads=${worker_threads-4}
 worker_timeout=${worker_timeout-30}
-gunicorn_args="--bind 0.0.0.0:8080 -w ${workers} -k ${worker_class} --threads ${worker_threads} -t ${worker_timeout} niweb.wsgi"
+gunicorn_args="--bind 0.0.0.0:8080 --worker-tmp-dir /dev/shm -w ${workers} -k ${worker_class} --threads ${worker_threads} -t ${worker_timeout} niweb.wsgi"
 
 # set PYTHONPATH if it is not already set using Docker environment
 export PYTHONPATH=${PYTHONPATH-${project_dir}}

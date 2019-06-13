@@ -6,7 +6,7 @@
 set -e
 set -x
 
-virtualenv /opt/ni/env
+python3 -m venv /opt/ni/env
 
 addgroup --system ni
 adduser --system --shell /bin/false ni
@@ -32,6 +32,7 @@ chown -R ni:ni /tmp/django_cache
 cd /opt/ni
 
 PYPI="https://pypi.sunet.se/simple/"
+/opt/ni/env/bin/pip install wheel
 /opt/ni/env/bin/pip install -i ${PYPI} -r requirements/prod.txt
 /opt/ni/env/bin/pip install gunicorn
 

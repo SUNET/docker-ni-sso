@@ -7,12 +7,11 @@ RUN apt-get update && \
       git \
       curl \
       build-essential \
-      libpython-dev \
-      python-pip \
-      python-virtualenv \
+      libpython3-dev \
+      python3-venv \
       libpq-dev \
       libffi-dev \
-      python-dev \
+      python3-dev \
     && apt-get clean
 
 RUN git clone https://github.com/SUNET/ni.git /opt/ni
