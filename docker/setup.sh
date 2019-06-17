@@ -33,7 +33,7 @@ cd /opt/ni
 
 PYPI="https://pypi.sunet.se/simple/"
 /opt/ni/env/bin/pip install wheel
-/opt/ni/env/bin/pip install -i ${PYPI} -r requirements/prod.txt
+/opt/ni/env/bin/pip install -i ${PYPI} --no-cache-dir -r requirements/prod.txt
 /opt/ni/env/bin/pip install gunicorn
 
 /opt/ni/env/bin/pip freeze
