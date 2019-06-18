@@ -14,6 +14,7 @@ project_dir=${project_dir-"${base_dir}/src/niweb"}
 log_dir=${log_dir-'/var/log/ni'}
 state_dir=${state_dir-"${base_dir}/run"}
 media_dir=${media_dir-"${base_dir}/media"}
+backup_dir=${backup_dir-"${base_dir}/backup"}
 cache_dir="/tmp/django_cache/"
 workers=${workers-2}
 worker_class=${worker_class-sync}
@@ -39,7 +40,8 @@ export DJANGO_SETTINGS_MODULE=${django_settings_module}
 # Collect static files
 /opt/ni/env/bin/python /opt/ni/src/niweb/manage.py collectstatic --noinput
 
-chown -R ni: "${log_dir}" "${state_dir}" "${media_dir}" "${cache_dir}"
+mkdir -p "${log_dir}" "${state_dir}" "${media_dir}" "${cache_dir}" "${backup_dir}"
+chown -R ni: "${log_dir}" "${state_dir}" "${media_dir}" "${cache_dir}" "${backup_dir}"
 
 start-stop-daemon --start -c ni:ni --exec \
      /opt/ni/env/bin/gunicorn \

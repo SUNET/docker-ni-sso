@@ -21,6 +21,7 @@ RUN /setup.sh
 
 COPY docker/set-initial-neo4j-password.sh /usr/local/bin/set-initial-neo4j-password
 COPY docker/run-django-cmd.sh /usr/local/bin/run-django-cmd
+COPY docker/backup-neo4j.sh /usr/local/bin/backup-neo4j.sh
 COPY docker/start.sh /start.sh
 
 # Add Dockerfile to the container as documentation
