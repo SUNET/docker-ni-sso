@@ -14,7 +14,7 @@ RUN apt-get update && \
       python3-dev \
     && apt-get clean
 
-RUN git clone https://github.com/SUNET/ni.git /opt/ni
+RUN git clone --single-branch --branch release https://github.com/SUNET/ni.git /opt/ni
 
 COPY docker/setup.sh /setup.sh
 RUN /setup.sh
