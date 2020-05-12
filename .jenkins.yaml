@@ -2,5 +2,6 @@ builders:
   - docker
 docker_name: sunet/docker-ni
 upstream:
+  - ni
   - python-norduniclient
 clean_workspace: true
