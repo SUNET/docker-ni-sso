@@ -1,5 +1,4 @@
 FROM debian:testing
-MAINTAINER Johan Lundberg <lundberg@sunet.se>
 
 RUN apt-get update && \
     apt-get -y dist-upgrade && \
@@ -18,7 +17,9 @@ RUN apt-get update && \
       libxml2-utils \
     && apt-get clean
 
-RUN git clone https://github.com/SUNET/ni.git /opt/ni
+RUN git clone https://github.com/SUNET/ni-sso.git /opt/ni
+WORKDIR /opt/ni
+RUN git checkout magnus-sso
 
 COPY docker/setup.sh /setup.sh
 RUN /setup.sh
