@@ -17,9 +17,9 @@ RUN apt-get update && \
       libxml2-utils \
     && apt-get clean
 
-RUN git clone https://github.com/SUNET/ni-sso.git /opt/ni
+RUN git clone https://github.com/NORDUnet/ni.git /opt/ni
 WORKDIR /opt/ni
-RUN git checkout magnus-sso
+RUN git checkout norpan_test_ni
 
 COPY docker/setup.sh /setup.sh
 RUN /setup.sh
