@@ -19,7 +19,7 @@ RUN apt-get update && \
 
 RUN git clone https://github.com/NORDUnet/ni.git /opt/ni
 WORKDIR /opt/ni
-RUN git checkout norpan_test_ni
+RUN git checkout norpan_debug_version
 
 COPY docker/setup.sh /setup.sh
 RUN /setup.sh
