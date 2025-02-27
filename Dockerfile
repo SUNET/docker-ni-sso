@@ -19,7 +19,8 @@ RUN apt-get update && \
 
 RUN git clone https://github.com/NORDUnet/ni.git /opt/ni
 WORKDIR /opt/ni
-RUN git checkout master
+# RUN git checkout master
+RUN git checkout add_long_distance_link_and_raman
 
 COPY docker/setup.sh /setup.sh
 RUN /setup.sh
