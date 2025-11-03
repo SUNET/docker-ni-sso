@@ -20,7 +20,7 @@ RUN apt-get update && \
 RUN git clone https://github.com/NORDUnet/ni.git /opt/ni
 WORKDIR /opt/ni
 # RUN git checkout master
-RUN git checkout add_area_to_cables_and_services
+RUN git checkout add_internal_description
 
 COPY docker/setup.sh /setup.sh
 RUN /setup.sh
